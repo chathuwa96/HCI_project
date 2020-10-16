@@ -23,7 +23,67 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     
+    <script type = "text/javascript">
+        <!--
+      
+      function validate() {
 
+      	if( document.myForm.name.value == "" ) {
+            alert( "Please Enter Your Name!" );
+            document.myForm.name.focus() ;
+            return false;
+         }
+         if( document.myForm.email.value == "" ) {
+            alert( "Please Enter Your Email Address!" );
+            document.myForm.email.focus() ;
+            return false;
+         }
+         var emailID = document.myForm.email.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos < 1 || ( dotpos - atpos < 2 )) {
+            alert("Please Enter Valid Email Address!")
+            document.myForm.email.focus() ;
+            return false;
+         }
+         if( document.myForm.phone.value == "" ) {
+            alert( "Please Enter Your Phone Number!" );
+            document.myForm.phone.focus() ;
+            return false;
+         }
+         if( document.myForm.phone.value.length != 10 || isNaN( document.myForm.phone.value )) {
+            alert( "Please Enter a Correct Phone Number!" );
+            document.myForm.phone.focus() ;
+            return false;
+         }
+         if( document.myForm.zip_code.value.length >= 6 || isNaN( document.myForm.zip_code.value )) {
+            alert( "Please Enter a Zip Code in the Format #####." );
+            document.myForm.zip_code.focus() ;
+            return false;
+         }
+         if( document.myForm.order_or_transaction_number.value.length >= 11 || isNaN( document.myForm.order_or_transaction_number.value )) {
+            alert( "Please Enter a Correct Order or Transaction Number!" );
+            document.myForm.order_or_transaction_number.focus() ;
+            return false;
+         }
+         if( document.myForm.subject.value == "-1" ) {
+            alert( "Please Select a Subject!" );
+            document.myForm.subject.focus() ;
+            return false;
+         }
+         if( document.myForm.qc.value == "" ) {
+            alert( "Please Enter Questions or Comments!" );
+            document.myForm.qc.focus() ;
+            return false;
+         }
+
+
+      	 return( true );
+      }
+
+   //-->
+	</script>
    
 
     <style>

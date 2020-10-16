@@ -22,6 +22,26 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script>
+        function validateForm() {
+          var x = document.forms["myForm"]["uname"].value;
+          var y = document.forms["myForm"]["email"].value;
+          var z = document.forms["myForm"]["feedback"].value;
+          if (x == "") {
+            alert("User Name must be filled out");
+            return false;
+          }
+          if (y == "") {
+            alert("User email must be filled out");
+            return false;
+          }
+          if (z == "") {
+            alert("Your Feedback must be filled out");
+            return false;
+          }
+        }
+        </script>
 </head>
 
 <body>
@@ -239,13 +259,13 @@ Overall, good machine and worth it for a daily driver... not for gaming or any s
             <div class="leave-comment">
                 <h4>Post a Feedback Review on this product</h4>
                             <p>It's a great plessure to us.</p>
-                    <form action="#" class="comment-form">
+                    <form name="myForm" action="#" class="comment-form" onsubmit="return validateForm()" method="post">
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="text" placeholder="Your name">
+                                <input type="text" placeholder="Your name" name="uname">
                             </div>
                             <div class="col-lg-6">
-                                <input type="text" placeholder="Your Email">
+                                <input type="email" placeholder="Your Email" name="email">
                             </div>
 
                             <div class="col-lg-12">
@@ -260,7 +280,7 @@ Overall, good machine and worth it for a daily driver... not for gaming or any s
                             </div><br><br><br>
 
                             <div class="col-lg-12">
-                                <textarea placeholder="Your Feedback on this product ... "></textarea>
+                                <textarea placeholder="Your Feedback on this product ... " name="feedback"></textarea>
                                 <button type="reset" class="site-btn" style="background-color: green;width: 49%;">Reset</button>
                                 <button type="submit" class="site-btn" style="width: 49%;">Sumbit Review</button>
                             </div>
